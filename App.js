@@ -723,7 +723,7 @@ const App = () => {
                 {workouts.map((workout, index) => (
                   <li key={index} className="p-4 rounded-xl bg-gray-50 shadow-md">
                     <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-3">
-                      <span className="font-semibold text-xl text-gray-900 mb-2 sm:mb-0">{format(parseISO(workout.date), 'MMM dd, yyyy')} - <span className="text-base text-gray-600">{workout.type.replace('_', ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')}</span></span>
+                      <span className="font-semibold text-xl text-gray-900 mb-2 sm:mb-0">{format(parseISO(workout.date), 'MMM dd, yyyy')} - <span className="text-base text-gray-600">({workout.type.replace('_', ' ').split(' ').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')})</span></span>
                       <button
                         onClick={() => setWorkouts(workouts.filter((_, i) => i !== index))}
                         className={`${deleteButtonClasses} px-4 py-2 text-sm`}

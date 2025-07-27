@@ -1,4 +1,4 @@
-    const CACHE_NAME = 'health-tracker-cache-v10'; // Increment cache version for updates
+    const CACHE_NAME = 'health-tracker-cache-v11'; // Increment cache version for updates
     const urlsToCache = [
       './', // Cache the root path
       './index.html',
