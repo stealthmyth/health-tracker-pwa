@@ -1,0 +1,48 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Personal Health Tracker</title>
+        <!-- Tailwind CSS CDN -->
+        <script src="https://cdn.tailwindcss.com"></script>
+        <!-- Inter font from Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+        <!-- Link to your PWA manifest file -->
+        <link rel="manifest" href="./manifest.json"> <!-- Relative path -->
+        <!-- Theme color for browser UI (e.g., address bar color) -->
+        <meta name="theme-color" content="#F3F4F6" /> <!-- Light mode background color -->
+        <!-- Apple Touch Icon for iOS home screen -->
+        <link rel="apple-touch-icon" href="./icons/icon-192x192.png"> <!-- Relative path -->
+    </head>
+    <body>
+        <div id="root"></div>
+        <script type="module">
+            // Import React and ReactDOM from esm.sh CDN
+            import React from 'https://esm.sh/react@18.2.0';
+            import ReactDOM from 'https://esm.sh/react-dom@18.2.0/client';
+            // Import your App component
+            import App from './App.js'; // Relative path
+
+            // Render your React App
+            const root = ReactDOM.createRoot(document.getElementById('root'));
+            root.render(
+                React.createElement(App, null)
+            );
+
+            // Register the service worker for PWA capabilities
+            if ('serviceWorker' in navigator) {
+                window.addEventListener('load', () => {
+                    navigator.serviceWorker.register('./service-worker.js') // Relative path
+                        .then(registration => {
+                            console.log('Service Worker registered:', registration);
+                        })
+                        .catch(error => {
+                            console.error('Service Worker registration failed:', error);
+                        });
+                });
+            }
+        </script>
+    </body>
+    </html>
+    
