@@ -1,4 +1,4 @@
-    const CACHE_NAME = 'health-tracker-cache-v9'; // Increment cache version for updates
+    const CACHE_NAME = 'health-tracker-cache-v10'; // Increment cache version for updates
     const urlsToCache = [
       './', // Cache the root path
       './index.html',
@@ -11,7 +11,6 @@
       'https://esm.sh/recharts',
       'https://esm.sh/date-fns',
       'https://raw.githubusercontent.com/yuhonas/free-exercise-db/main/dist/exercises.json', // Exercise database
-      './icons/icon.svg', // SVG Logo
       './icons/icon-192x192.png', // PNG Icon
       './icons/icon-512x512.png' // PNG Icon
     ];
